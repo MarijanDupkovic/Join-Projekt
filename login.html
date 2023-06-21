@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Login</title>
+    <link rel="icon" type="image/png" href="img/logo-dunkel.png">
+    <script src="../smallest_backend_ever/mini_backend.js"></script>
+
+    <script src="./js/variables.js"></script>
+
+    <script src="./js/login.js"></script>
+    <script src="./js/helpers.js"></script>
+
+    <script src="./js/script.js"></script>
+
+    <script src="./js/contacts.js"></script>
+    <link rel="" href="send_mail.php">
+
+    <link rel="stylesheet" href="./CSS/login.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+
+</head>
+
+<body onload="initLogin()">
+    <div class="start-overlay"><img src="img/LogoGross.png" class="start-logo"></div>
+    <div class="loginWindow" id="loginWindow">
+        <div class="loginHeaderContainer ">
+            <img src="img/logo-dunkel.png" alt="Join-Logo-Dunkel">
+            <div class="notJoinUserContainer " id="notJoinUserContainer">
+                <p>Not a Join user?</p>
+                <button onclick="showFrame('signUpFrame','loginFrame','notJoinUserContainer')">Sign up</button>
+            </div>
+        </div>
+<!-- Log in Page-->
+        <div class="frameStyle" id="loginFrame">
+            <h1>Log in</h1>
+            <div class="headerLine">
+            </div>
+            <form onsubmit="login(); return false;">
+                <div class="inputField">
+                    <input id="userMailLogIn" type="email" placeholder="Email" autocomplete="off" required>
+                    <img src="img/emailVector.png" alt="email symbol">
+                </div>
+                <div class="checkUserData">
+                    <span id="dataCheck" class="d-none">The email address or password is not correct.</span>
+                </div>
+
+                <div class="inputField">
+                    <input id="userPasswordLogIn" type="password" placeholder="Password" autocomplete="off" required>
+                    <img id="user_password_icon" src="img/passwordVector.png" alt="password symbol">
+                    <img id="user_password_hidden" onclick="makePasswordVisible()" src="img/showPassword.png"
+                        alt="password symbol" class="d-none">
+                    <img id="user_password_visible" onclick="makePasswordUnvisible()" src="img/dontShowPassword.png"
+                        alt="password symbol" class="d-none">
+                </div>
+
+                <div class="containerRememberAndForgot">
+                    <div class="containerCbRememberMe">
+                        <input type="checkbox">
+                        <p class="rememberMe">Remember me</p>
+                    </div>
+                    <button type="button" onclick="showFrame('forgotMyPasswordFrame','loginFrame','notJoinUserContainer')">Forgot my
+                        password</button>
+                </div>
+
+                <div class="btnContainer">
+                    <button type="submit"class="btnLoginAndSignUp">Log in</button>
+                    <button class="btnGuest" onclick="guestLogin()">Guest Log in</button> 
+                    <!-- window.location.href='summary.html' -->
+                </div>
+            </form>
+        </div>
+    </div>
+<!-- Sign Up Page-->
+    <div class="frameStyle d-none" id="signUpFrame">
+        <img src="img/backBtn.png" onclick="showFrame('loginFrame','notJoinUserContainer','signUpFrame')"
+            class="backBtn">
+        <h1>Sign up</h1>
+        <div class="headerLine">
+        </div>
+        <form onsubmit="addUser(); return false;">
+            <div class="inputField">
+                <input id="name" type="text" placeholder="First Name Surname" autocomplete="off" required
+                pattern="[A-Z]{1}[a-z]*[\s][A-Z]{1}[a-z]*" title="Please enter your First Name and Surname. No numbers! Please separate your first name and surname with a space.">
+                <img src="img/nameVector.png" alt="user symbol">
+            </div>
+
+            <div class="inputField">
+                <input id="userMail" type="email" placeholder="Email" autocomplete="off" required>
+                <img src="img/emailVector.png" alt="email symbol">
+            </div>
+
+            <div class="inputField">
+                <input id="userPassword" type="password" placeholder="Password" autocomplete="off" required
+                pattern=".{6,}" title="Password need six or more character">
+                <img id="userPasswordIcon" onclick="showPassword()" src="img/passwordVector.png">
+            </div>
+            <div class="btnSignUpContainer">
+                <button class="btnLoginAndSignUp">Sign up</button>
+            </div>
+        </form>
+    </div>
+<!-- Confirm Page-->
+    <div class="frameStyle d-none" id="signUpConfirmFrame">
+        <h1>Join us!</h1>
+        <div class="headerLine">
+        </div>
+        <p>Welcome to Join!
+            <br>You have successfully registered.<br>Please click on the button and log in.
+        </p>
+        <button class="btnLoginAndSignUp" onclick="window.location.href='login.html'">Log in</button>
+    </div>
+<!-- Reset Password Page-->
+    <div class="frameStyle d-none" id="forgotMyPasswordFrame">
+        <img src="img/backBtn.png" onclick="showFrame('notJoinUserContainer','loginFrame','forgotMyPasswordFrame')"
+            class="backBtn">
+        <h1 class="headerForgotMyPassword">I forgot my password</h1>
+        <div class= "lineForgotMyPassword headerLine">
+        </div>
+        <p class="forgotMyPasswordText" id="forgotMyPasswordText">Don't worry! We will send you an email with the instructions to reset your password.</p>
+        <form method="POST" onsubmit="onSubmitRQPassword(event)" id="forgotPwForm">
+            <div class="inputField inputEmailForgotPassword">
+                <input name="email" id="userMailResetPassword" type="email"  placeholder="Email" autocomplete="off" required>
+                <img src="img/emailVector.png" alt="email symbol">
+            </div>
+            <button type="submit" class="btnSendMeMail">Send me the mail</button>
+        </form>
+    </div>
+
+
+</body>
+
+</html>

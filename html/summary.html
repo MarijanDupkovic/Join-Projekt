@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Summary</title>
+    <link rel="icon" type="image/png" href="../img/logo-dunkel.png">
+    <script src="../js/legalHelp.js"></script>
+    <script src="../js/genHTML.js"></script>
+    <script src="../js/variables.js"></script>
+    <script src="../../smallest_backend_ever/mini_backend.js"></script>
+    <script src="../js/summary.js"></script>
+    <script src="../js/helpers.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/board.js"></script>
+    <link rel="stylesheet" href="../CSS/navi.css">
+    <link rel="stylesheet" href="../CSS/summary.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <!-- <link rel="stylesheet" href="./CSS/mediaqueries.css"> -->
+</head>
+
+<body onload="initSummary()">
+
+    <div class="summaryWelcomeTextMobile d-none" id="summaryWelcomeTextMobile">
+        <div class="summaryGreeting" id="greetingMobile"></div>
+        <div class="summaryContactName" id="currentUserMobile"></div>
+    </div>
+
+    <div w3-include-html="../templates/navs.html" id="nav"></div>
+    
+    <div class="leftRightContainers" id="mainContainer">
+        <div class="summaryPageContainer">
+            <div class="summaryHeader">
+                <h1>Summary</h1>
+                <div class="verticalLine"></div>
+                <span>Everything in a nutshell!</span>
+            </div>
+            <div class="summeryBoxContainer">
+                <div class="summaryTop">
+                    <div class="summaryTopSingle" onclick="showLink('board.html')">
+                        <div class="boxNumber" id="tasksInBoardBox">5</div>
+                        <div class="boxText">Tasks in Board</div>
+                    </div>
+                    <div class="summaryTopSingle" onclick="showLink('board.html')">
+                        <div class="boxNumber" id="tasksInProgressBox">2</div>
+                        <div class="boxText">Tasks in Progress</div>
+                    </div>
+                    <div class="summaryTopSingle" onclick="showLink('board.html')">
+                        <div class="boxNumber" id="awaitingFeedbackBox">2</div>
+                        <div class="boxText">Awaiting Feedback</div>
+                    </div>
+                </div>
+                <div class="summaryCenter" onclick="showLink('board.html')">
+                    <div class="summaryPrioContainer">
+                        <img src="../img/urgentFilled.png" class="prioImg">
+                        <div class="prioContainer">
+                            <div class="prioNumber" id="urgent">1</div>
+                            <div class="prioText">Urgent</div>
+                        </div>
+                    </div>
+                    <div class="prioVerticalLine"></div>
+                    <div class="upcomingDateContainer">
+                        <div class="upcomingDate" id="date">October 16, 2022</div>
+                        <div class="upcomingDateText">Upcoming Date</div>
+                    </div>
+                </div>
+                <div class="summaryBottom">
+                    <div class="summaryBottomSingle" onclick="showLink('board.html')">
+                        <img src="../img/todoPencil.png" class="todoPencilImg">
+                        <div class="todoContainer">
+                            <div class="todoNumber" id="toDo">1</div>
+                            <div class="todoText">To-do</div>
+                        </div>
+                    </div>
+                    <div class="summaryBottomSingle" onclick="showLink('board.html')">
+                        <img src="../img/todoDone.png" class="todoDoneImg">
+                        <div class="todoContainer">
+                            <div class="todoNumber" id="done">1</div>
+                            <div class="todoText">Done</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="summaryWelcomeText">
+            <span class="summaryGreeting" id="greeting">Good Morning</span>
+            <span class="summaryContactName" id="currentUser">Sofia Müller</span>
+        </div>
+    </div>
+</body>
+
+</html>

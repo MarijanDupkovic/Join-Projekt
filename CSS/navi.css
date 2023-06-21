@@ -1,0 +1,302 @@
+.legalNotice,
+.help {
+    position: absolute;
+    width: calc(100% - 232px);
+    right: 0;
+    bottom: 0;
+    top: 90px;
+    align-items: flex-start;
+    overflow: hidden;
+    background-color: #F5F5F5;
+    z-index: 15;
+}
+
+.kpmt {
+    display: unset !important;
+}
+
+.helpContainer {
+    padding: 50px 120px;
+    padding-bottom: 150px;
+}
+
+.noticeContainer {
+    overflow: overlay;
+    padding: 50px 120px;
+    padding-bottom: 150px;
+}
+
+.legal-notice {
+    width: 18px;
+    height: 18px;
+}
+
+.navigation-left-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 103px;
+}
+
+.navigation-left-linksContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 103px;
+    margin-bottom: calc(100% + 80px);
+
+}
+
+.navigation-left-link img {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+}
+
+.logo-nav {
+    width: 100.03px;
+    height: 121.97px;
+}
+
+.navigation-left {
+    background-color: #2A3647;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    width: 232px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: 17;
+    box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, 0.3);
+}
+
+.navigation-left-link {
+    display: flex;
+    align-items: center;
+    padding: 8px 53px;
+    gap: 10px;
+    width: 232px;
+    height: 46px;
+    cursor: pointer;
+}
+
+.back {
+    position: absolute;
+    right: 120px;
+    top: 50px;
+    z-index: 10;
+}
+
+.backImg {
+    object-fit: contain;
+    width: 37px;
+    height: 37px;
+}
+
+.logoutButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: absolute;
+    width: 130px;
+    height: 53px;
+    background: #2A3647;
+    color: #CDCDCD;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px 0px 20px 20px;
+    right: 20px;
+    top: 90px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    flex-direction: column-reverse;
+    z-index: 20;
+}
+
+.logoInvertColor {
+    display: none;
+}
+
+@media (max-width:1300px) {
+    .helpContainer, .noticeContainer {
+        padding: 20px 25px;
+        overflow-y: scroll;
+    }
+    
+    .help, .legalNotice {
+        width: unset;
+        bottom: 80px;
+    }
+
+    #noticeContainer {
+        display: none;
+    }
+    .back {
+        right: 30px;
+    }
+
+    .impressum {
+        font-size: 13px;
+    }
+
+    .impressum h1 {
+        font-size: 40px;
+    }
+
+    .logoutButton {
+        gap: 5px;
+        align-items: flex-start;
+        height: unset;
+    }
+
+    .kpmt {
+        position: absolute;
+        top: unset;
+        left: 0;
+        padding-left: 70px;
+        display: block !important;
+
+    }
+
+    .profileNavContainer {
+        position: absolute;
+        right: 25px;
+    }
+
+    .logoInvertColor {
+        display: unset;
+        width: 32px;
+        height: 40px;
+        position: absolute;
+        left: 25px;
+        object-fit: contain;
+    }
+
+    .navigation-left {
+        background-color: #2A3647;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        height: 80px;
+        left: 0px;
+        top: unset;
+        z-index: 9;
+        box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        right: 0;
+        bottom: 0;
+    }
+
+    .navigation-left-link {
+        flex-direction: column;
+        justify-content: center;
+        padding-top: unset;
+        width: 25%;
+        padding: unset;
+        height: 100%;
+    }
+
+    .navigation-left-links,
+    .navigation-left-linksContainer {
+        margin-top: unset;
+        width: 100%;
+    }
+
+    .navigation-left-links {
+        flex-direction: row;
+        height: 100%;
+    }
+
+    .navigation-left-linksContainer {
+        margin-bottom: unset;
+        height: 100%;
+    }
+
+    #logoNav {
+        display: none;
+    }
+
+    #addLegal {
+        display: none;
+    }
+}
+
+@media (max-width:500px) {
+    .kpmt {
+        top: unset;
+
+    }
+
+}
+
+
+@media (max-width:350px) {
+
+
+
+    .profileNavContainer {
+        position: absolute;
+        right: 25px;
+    }
+
+    .logoInvertColor {
+        display: unset;
+        width: 32px;
+        height: 40px;
+        position: absolute;
+        left: 25px;
+        object-fit: contain;
+    }
+
+    .navigation-left {
+        background-color: #2A3647;
+        display: flex;
+        align-items: center;
+        height: 80px;
+        left: 0px;
+        top: unset;
+        z-index: 9;
+        box-shadow: 2px 0px 4px 0px rgba(0, 0, 0, 0.3);
+        width: 100%;
+        right: 0;
+        bottom: 0;
+    }
+
+    .navigation-left-link {
+        flex-direction: column;
+        justify-content: center;
+        padding-top: unset;
+        width: 25%;
+        padding: unset;
+        height: 100%;
+    }
+
+    .navigation-left-links,
+    .navigation-left-linksContainer {
+        margin-top: unset;
+        width: 100%;
+    }
+
+    .navigation-left-links {
+        flex-direction: row;
+        height: 100%;
+    }
+
+    .navigation-left-linksContainer {
+        margin-bottom: unset;
+        height: 100%;
+    }
+
+    #logoNav {
+        display: none;
+    }
+
+    #addLegal {
+        display: none;
+    }
+}

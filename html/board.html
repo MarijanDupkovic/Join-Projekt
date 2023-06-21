@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Board</title>
+    <link rel="icon" type="image/png" href="../img/logo-dunkel.png">
+    <link rel="stylesheet" href="../CSS/navi.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/board.css">
+    <link rel="stylesheet" href="../CSS/mediaqueries.css">
+    <link rel="stylesheet" href="../CSS/addTask.css">
+    <script src="../js/legalHelp.js"></script>
+    <script src="../js/addTask.js"></script>
+    <script src="../js/contacts.js"></script>
+    <script src="../js/helpers.js"></script>
+    <script src="../js/genHTML.js"></script>
+    <script src="../js/variables.js"></script>
+    <script src="../../smallest_backend_ever/mini_backend.js"></script>
+    <script src="../js/board.js"></script>
+    <script src="../js/script.js"></script>
+</head>
+
+<body onload="initBoard()">
+    <div w3-include-html="../templates/navs.html" class="d-dark"></div>
+    <div id="addTaskAtBoard" class="d-none"></div>
+    <div id="overlay" class="overlay d-none"></div>
+    <div class="boardContainer" id="boardContainer">
+        <div class="boardHeaderContainer">
+            <h1>Board</h1>
+            <div class="findAddTaskContainer">
+                <div class="searchBox">
+                    <input type="text" id="search" onchange="searchTasks()" placeholder="Find Task">
+                    <div class="searchVerticalLine"></div>
+                    <img src="../img/search.png">
+                </div>
+                <button class="addTaskBtn" onclick="showAddNewTaskAtBoard('toDo')">Add Task<img
+                        src="../img/addTaskWhite.png">
+                </button>
+            </div>
+        </div>
+        <div class="cardHeaders">
+            <div class="dragAreaFullContainer">
+                <div class="dragAreaTitle" id="dragAreaToDoTitle">
+                    <label for="toDo">To do</label>
+                </div>
+                <div class="dragArea" name="toDo" id="toDo" ondrop="moveTo('toDo')"
+                    ondragover="allowDrop(event); highlight('toDo')">
+                </div>
+            </div>
+            <div class="dragAreaFullContainer">
+                <div class="dragAreaTitle" id="dragAreaIPTitle">
+                    <label for="inProgress">In Progress</label>
+                </div>
+                <div class="dragArea" name="inProgress" id="inProgress" ondrop="moveTo('inProgress')"
+                    ondragover="allowDrop(event);highlight('inProgress')"></div>
+            </div>
+            <div class="dragAreaFullContainer">
+                <div class="dragAreaTitle" id="dragAreaAFTitle">
+                    <label for="awaitingFeedback">Awaiting Feedback</label>
+                </div>
+                <div class="dragArea" name="awaitingFeedback" id="awaitingFeedback" ondrop="moveTo('awaitingFeedback')"
+                    ondragover="allowDrop(event);highlight('awaitingFeedback')">
+                </div>
+            </div>
+            <div class="dragAreaFullContainer">
+                <div class="dragAreaTitle" id="dragAreaDoneTitle">
+                    <label for="done">Done</label>
+                </div>
+                <div class="dragArea" name="done" id="done" ondrop="moveTo('done')"
+                    ondragover="allowDrop(event);highlight('done')">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

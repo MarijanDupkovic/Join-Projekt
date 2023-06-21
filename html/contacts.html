@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join - Contacts</title>
+    <link rel="icon" type="image/png" href="../img/logo-dunkel.png">
+    <script src="../js/legalHelp.js"></script>
+    <script src="../js/addTask.js"></script>
+    <script src="../../smallest_backend_ever/mini_backend.js"></script>
+    <script src="../js/contacts.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/helpers.js"></script>
+    <script src="../js/genHTML.js"></script>
+    <script src="../js/variables.js"></script>
+    <link rel="stylesheet" href="../CSS/navi.css">
+    <link rel="" href="send_mail.php">
+    <link rel="stylesheet" href="../CSS/contacts.css">
+    <link rel="stylesheet" href="../CSS/mediaqueries.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body onload="initContacts()">
+    <div w3-include-html="../templates/navs.html"></div>
+    <div id="overlay" class="overlay d-none"></div>
+    <div class="content" id="contactDetailsContainer">
+        <div id="contacts" class="details"></div>
+        <div id="contactDetails" class="d-none"></div>
+        <div id="addTaskAtContacts" class="d-none"></div>
+        <div id="createNewUserAtContacts" class="d-none">
+            <div onclick="addDisplayNone('createNewUserAtContacts'),addDisplayNone('overlay')" class="closeIconAtContacts addUserCloseBtn"></div>
+            <div class="createNewUserAtContactsContainer">
+                <div class="createNewUserAtContacts-left">
+                    <div class="left-side-Contacts">
+                        <img src="../img/logo-nav.png" alt="">
+                        <div>
+                            <h3 class="addNewContactTitle">Add Contact</h3>
+                            <h5 class="addNewContactSubTitle">Tasks are better with a team</h5>
+                            <div class="fillDiv-w90"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="createNewUserAtContacts-right">
+                    <form method="POST" onsubmit="onSubmitting(event)">
+                        <div class="addNewContactProfileImgContainer">
+                            <img class="profileDummy" src="../img/profileDummy.png">
+                            <img class="profileDummyInside" src="../img/profileDummyInside.png">
+                        </div>
+                        <div class="addNewContactInputs">
+                            <div class="createNewContactNameInput">
+                                <input type="text" required placeholder="Firstname Lastname"
+                                    pattern="[A-Z]{1}[a-z]*[\s][A-Z]{1}[a-z]*" id="createNewContactName">
+                                <img class="createNewContactNameImg" src="../img/miniProfile.png">
+                            </div>
+                            <div class="createNewContactNameInput">
+                                <input name="email" type="email" required placeholder="Email" id="createNewContactEmail">
+                                <img class="createNewContactNameImg" src="../img/miniMailIcon.png">
+                            </div>
+                            <div class="createNewContactNameInput">
+                                <input type="number" pattern="[0-9]*" required placeholder="Phone" id="createNewContactPhone">
+                                <img class="createNewContactNameImg" src="../img/miniPhoneIcon.png">
+                            </div>
+                            <div class="addNewContactsButtonContainer">
+                                <div onclick="addDisplayNone('createNewUserAtContacts'),addDisplayNone('overlay')" class="addNewContactCancelButton">Cancel</div>
+                                <button type="submit" class="addNewContactCreateButton">Create Contact<img
+                                        src="../img/checkIconWhite.png">
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div onclick="removeDisplayNone('createNewUserAtContacts'), removeDisplayNone('overlay')" class="addNewContactButton" id="addNewContactButton">
+            New Contact
+            <img src="../img/addNewContactIcon.png" class="addNewContactIcon">
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

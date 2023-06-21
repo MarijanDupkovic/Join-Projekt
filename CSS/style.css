@@ -1,0 +1,932 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: none;
+    scrollbar-color: #091931 #2a3647;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #2a3647;
+    border-radius: 10px;
+    border: 0px none #ffffff;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../font/Inter/Inter-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../font/Inter/Inter-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Inter/Inter-Regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Inter/Inter-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Iner/Inter-Regular.svg#svgInterRegular') format('svg'); /* Legacy iOS */
+}
+
+body {
+    background-color: #F5F5F5;
+    overflow: hidden;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.editButtonContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 50px;
+}
+
+.deleteButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 4px 18px;
+    gap: 10px;
+    width: 104px;
+    height: 55px;
+    border: 1px solid #2A3647;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 120%;
+    color: #2A3647;
+}
+
+.inputTextStd {
+    gap: 10px;
+    width: 422px;
+    height: 51px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    padding: 18px 21px;
+    cursor: pointer;
+    outline: none;
+}
+
+.fillerDiv {
+    width: 0px;
+    height: 59px;
+    border: 3px solid #29ABE2;
+    margin: 0 50px;
+    align-self: center;
+}
+
+h4 {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 120%;
+    align-self: center;
+    color: #2A3647;
+}
+
+#contactName {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 47px;
+    line-height: 120%;
+    margin-bottom: 13px;
+}
+
+.colorCircleMedium {
+    width: 42px;
+    height: 42px;
+    background: #9327FF;
+    border: 1px solid #FFFFFF;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+}
+
+@keyframes myAnim {
+    0% {
+        opacity: 1;
+        transform: translateX(1200px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes myAnimRevert {
+    0% {
+        opacity: 1;
+        transform: translateY(1200px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes myAnim2 {
+    0% {
+        opacity: 1;
+        transform: translateX(1000px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fillDiv-w90 {
+    width: 90px;
+    border: 3px solid #29ABE2;
+}
+
+.profileDummyInside {
+    position: absolute;
+    width: 62px;
+    height: 62px;
+    left: 29px;
+    top: 29px;
+}
+
+.profileDummy {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: 0px;
+    top: 0px;
+    background: #D1D1D1;
+    border-radius: 100%;
+}
+
+.closeIconAtContacts {
+    position: absolute;
+    height: 21.65px;
+    right: 4%;
+    top: 32.11px;
+    object-fit: contain;
+    cursor: pointer;
+    background-image: url(../img/closeIconEditUserAtContacts.png);
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+}
+
+#addTaskAtBoard,
+#addTaskAtContacts {
+    position: absolute;
+    left: 50%; 
+    top:15%;
+    transform: translateX(-50%); 
+    /* width: 1200px; */
+    z-index: 10;
+    background: #FFFFFF;
+    
+    padding: 20px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+    justify-content: space-evenly;
+    animation: myAnim 0.5s cubic-bezier(0.32, 0, 0.67, 0) 0s 1 normal none;
+}
+
+.addTaskForm:first-of-type [div] {
+    height: 550px;
+}
+
+#addTaskAtBoard::-webkit-scrollbar,#addTaskAtContacts::-webkit-scrollbar {
+    width:0px;
+}
+
+.createNewUserAtContactsContainer,
+.editUserAtContactsContainer {
+    display: flex;
+    border-radius: 30px;
+    box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.125);
+}
+
+.addNewContactTitle,
+.editContact {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+
+.addNewContactSubTitle {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 27px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+
+.addNewContactIcon {
+    width: 27.77px;
+    height: 25px;
+    object-fit: contain;
+    margin-left: 10px;
+}
+
+.addNewContactButton:hover,
+.createTaskBtn:hover,
+.addNewContactCreateButton:hover,
+.editContactButton:hover {
+    background-color: #29ABE2;
+    border: 1px solid #29ABE2;
+}
+
+.clearButton:hover,
+.addNewContactCancelButton:hover,
+.deleteButton:hover {
+    border: 1px solid #29ABE2;
+    color: #29ABE2;
+}
+
+.addNewContactButton::after,
+.createTaskBtn::after {
+    background-color: #091931;
+    border: 1px solid #091931;
+}
+
+.contactInformationContentContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 15px;
+    width: 124px;
+    height: 53px;
+}
+
+.add-task-link {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #29ABE2;
+    margin-left: 13px;
+}
+
+.contactHeadAddTask {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: #29ABE2;
+}
+
+.contactHeadAddTask:hover {
+    font-weight: 700;
+}
+
+.addTaskContacts {
+    object-fit: contain;
+    width: 15px;
+    height: 15px;
+    margin-right: 12px;
+}
+
+.contactHead {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contactsTitle {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 61px;
+    line-height: 120%;
+    width: unset;
+}
+
+#contactDetails {
+    position: absolute;
+    right: 0;
+    top: 89px;
+    bottom: 0;
+    padding-left: 52px;
+    padding-top: 82px;
+    width: calc(100% - 460px);
+}
+
+.contactsTitleContainer {
+    display: flex;
+    margin-bottom: 52px;
+}
+
+input[type=checkbox i] {
+    cursor: pointer;
+}
+
+input {
+    cursor: pointer;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.letter {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    width: 282px;
+    height: 40px;
+}
+
+.contactListFillerDiv {
+    width: 323px;
+    height: 0px;
+    border: 1px solid #D1D1D1;
+    border-radius: 3px;
+    align-self: center;
+}
+
+.selectImg {
+    position: absolute;
+    width: 16px;
+    height: 8px;
+    left: 392px;
+    top: 22px;
+}
+
+.inputTextStd::-webkit-calendar-picker-indicator {
+    background: url('../img/calendarIcon.png') no-repeat;
+    opacity: 1;
+    object-fit: contain;
+    width: 23px;
+    height: 23px;
+}
+
+.inputDescriptionField {
+    gap: 10px;
+    isolation: isolate;
+    width: 422px;
+    height: 119px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    resize: vertical;
+    padding: 18px 21px;
+    cursor: pointer;
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+.inputAddIcon {
+    position: absolute;
+    right: 0;
+    object-fit: cover;
+    width: 24px;
+    height: 24px;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.dropDownMenuField {
+    gap: 10px;
+    isolation: isolate;
+    width: 422px;
+    min-height: 51px;
+    background: #FFFFFF;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    z-index: 9;
+    border: 1px solid #D1D1D1;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    max-height: 205px;
+    overflow: auto;
+}
+
+#id_urgent,
+#id_medium,
+#id_low {
+    cursor: pointer;
+}
+
+.margin0px {
+    margin: 0 !important;
+}
+
+.cl_users {
+    align-self: flex-start;
+    background-color: #FFFFFF;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 21px;
+    min-height: unset !important;
+    justify-content: space-between;
+}
+
+
+.dropDownStart {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 18px 21px;
+    border-radius: 10px;
+}
+
+.subTaskStart {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 18px 21px;
+    border-radius: 10px;
+    justify-content: space-between;
+}
+
+.prioImg {
+    width: 20px;
+    height: 14.51px;
+    object-fit: cover;
+}
+
+
+.confirmMessage {
+    position: fixed;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    bottom: 50%;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 326px;
+    height: 74px;
+    background: #2A3647;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    color: #FFFFFF;
+}
+
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.gap-10px {
+    gap: 10px;
+}
+
+.align-c {
+    align-items: center;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.detail div label {
+    gap: 10px;
+    width: 136px;
+    height: 51px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.detail div label:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.detail div {
+    gap: 10px;
+}
+
+.navigation-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 34px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    z-index: 16;
+    height: 89px;
+    padding-left: 340px;
+    padding-right: 20px;
+}
+
+.navigation-top a {
+    font-size: 21px;
+}
+
+h2 {
+    font-size: 61px;
+    width: 100%;
+}
+
+label {
+    margin: 5px 0;
+}
+
+option {
+    background-color: #FFFFFF;
+    font-size: 21px;
+}
+
+select option:hover {
+    background: #D1D1D1 !important;
+}
+
+.navigation-top a {
+    color: black;
+}
+
+.details {
+    display: flex;
+    margin-top: 20px;
+}
+
+.border-1px-solid {
+    border: 1px solid #D1D1D1;
+    margin: 0 125px;
+}
+
+.cl_categories {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    padding: 18px 21px;
+
+}
+
+.cl_categories:last-of-type {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.cl_users:last-of-type {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-bottom: 18px;
+}
+
+.cl_categories:hover,.cl_users:hover {
+    background: #D1D1D1 !important;
+
+}
+
+.width0-height31px {
+    width: 0;
+    height: 31px;
+}
+
+.newCat {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 9px;
+    position: relative;
+    width: 66px;
+    height: 31px;
+    left: 341px;
+    top: -41px;
+}
+
+.newCat a img,
+.newCat a {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 5px;
+    font-size: 21px;
+}
+
+.detailBox-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.detailBox-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.colorCircle {
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 2px solid #FFFFFF;
+}
+
+.boardCircle {
+    display: flex;
+    font-weight: 200 !important;
+    font-size: 18px;
+}
+
+.colorCircle:hover {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.colorCircleisActive {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.colorCircle-big {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    border: 2px solid #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 47px;
+    line-height: 120%;
+    color: #FFFFFF;
+    margin-right: 65px;
+}
+
+.input[type=color] {
+    border: 0;
+    text-decoration: none;
+    appearance: none;
+}
+
+#addTask {
+    display: flex;
+    margin-top: 125px;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    right: 0;
+    width: calc(100% - 232px);
+    padding-left: 125px;
+    bottom: 0;
+    top: 20px;
+}
+
+.clearButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 10px;
+    gap: 10px;
+    width: 136px;
+    height: 61px;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    margin-right: 5px;
+    color: #2A3647;
+    font-size: 21px;
+    line-height: 120%;
+    cursor: pointer;
+}
+
+.container-btns {
+    align-self: flex-end;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+}
+
+.addTaskForm {
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+}
+
+a {
+    cursor: pointer;
+}
+
+.createTaskBtn {
+    font-size: 21px;
+    line-height: 120%;
+    background-color: #2A3647;
+    color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 18px 10px;
+    gap: 10px;
+    width: 177px;
+    height: 61px;
+    border-radius: 10px;
+    margin-left: 5px;
+    border: 1px solid #2A3647;
+    cursor: pointer;
+}
+
+.createTaskBtnContainer img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.border-bottom-1px {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.contactSegment {
+    list-style: upper-alpha;
+    width: 360px;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.addNewContactsButtonContainer,
+.editContactsButtonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 25px;
+    width: 369px;
+    height: 61px;
+    margin-top: 50px;
+}
+
+.showEditContainer {
+    color: #000000;
+}
+
+.showEditContainer:hover {
+    color: #29ABE2;
+}
+
+.showEditContainer:hover .showEditImg {
+    background-image: url('../img/editContactPenBlue.png');
+}
+
+.showEditImg {
+    background-image: url('../img/editContactPen.png');
+    margin-right: 6px;
+    object-fit: cover;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.editContactButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 15px;
+    gap: 10px;
+    width: 153px;
+    height: 55px;
+    background: #2A3647;
+    border-radius: 10px;
+    color: #FFFFFF;
+    border: 1px solid #2A3647;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 120%;
+}
+
+.addNewContactCancelButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 10px;
+    gap: 25px;
+    width: 136px;
+    height: 55px;
+    color: #2A3647;
+    border: 1px solid #2A3647;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contactSelect:hover {
+    background: linear-gradient(180deg, #F9F9F9 0%, #F0F0F0 100%);
+}
+
+.contactsAttributeBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacts {
+    display: flex;
+    position: absolute;
+    left: 233px;
+    top: 65px;
+    background-color: #FFFFFF;
+    bottom: 0;
+    width: 453px;
+    box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.08);
+}
+.helpHeader{
+    margin-bottom: 30px;
+}
+
+.impressum h1 {
+    font-size: 61px;
+}
+
+.helpDescriptionContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.howToContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.howToNumbersAndTextContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.howToNumbers {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 120%;
+}
+
+#helpContent {
+    z-index: 15;
+}
+
+@media (max-width:1300px) {
+    #helpContent {
+    z-index: 15;
+    }
+}
